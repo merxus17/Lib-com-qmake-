@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1067</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,0">
+    <item>
+     <layout class="QHBoxLayout" name="main2DHorizontalLayout"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="main3DHorizontalLayout"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="sizeVerticalLayout" stretch="0,0,0">
+      <item>
+       <widget class="QTreeView" name="sceneTreeView">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="locale">
+         <locale language="C" country="AnyCountry"/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="itemPropTextEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="locale">
+         <locale language="C" country="AnyCountry"/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>150</height>
+         </size>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1067</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="locale">
+    <locale language="C" country="AnyCountry"/>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <addaction name="actionTriangular2DMesh"/>
+     <addaction name="actionTriangular3DMesh"/>
+     <addaction name="actionQuad2DMesh"/>
+     <addaction name="actionQuad3DMesh"/>
+    </widget>
+    <addaction name="menuImport"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="locale">
+    <locale language="C" country="AnyCountry"/>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="locale">
+    <locale language="C" country="AnyCountry"/>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionDefault"/>
+   <addaction name="actionSelectionTool"/>
+   <addaction name="actionZoomIn"/>
+   <addaction name="actionZoomOut"/>
+   <addaction name="actionFit"/>
+   <addaction name="separator"/>
+   <addaction name="actionPlanePositiveX"/>
+   <addaction name="actionPlaneNegativeX"/>
+   <addaction name="actionPlanePositiveY"/>
+   <addaction name="actionPlaneNegativeY"/>
+   <addaction name="actionPlanePositiveZ"/>
+   <addaction name="actionPlaneNegativeZ"/>
+   <addaction name="actionView3D"/>
+  </widget>
+  <action name="actionSelectionTool">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/selection.png</normaloff>:/img/selection.png</iconset>
+   </property>
+   <property name="text">
+    <string>selectionTool</string>
+   </property>
+   <property name="toolTip">
+    <string>selects items in the scene</string>
+   </property>
+  </action>
+  <action name="actionDefault">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/cursor.png</normaloff>:/img/cursor.png</iconset>
+   </property>
+   <property name="text">
+    <string>defaut</string>
+   </property>
+  </action>
+  <action name="actionZoomIn">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/ZoomIn.png</normaloff>:/img/ZoomIn.png</iconset>
+   </property>
+   <property name="text">
+    <string>zoomIn</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/ZoomOut.png</normaloff>:/img/ZoomOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>zoomOut</string>
+   </property>
+  </action>
+  <action name="actionFit">
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/fit.png</normaloff>:/img/fit.png</iconset>
+   </property>
+   <property name="text">
+    <string>fit</string>
+   </property>
+   <property name="toolTip">
+    <string>Fits the whole scene into view</string>
+   </property>
+  </action>
+  <action name="actionTriangular2DMesh">
+   <property name="text">
+    <string>Triangular2DMesh</string>
+   </property>
+  </action>
+  <action name="actionTriangular3DMesh">
+   <property name="text">
+    <string>Triangular3DMesh</string>
+   </property>
+  </action>
+  <action name="actionQuad2DMesh">
+   <property name="text">
+    <string>Quad2DMesh</string>
+   </property>
+  </action>
+  <action name="actionQuad3DMesh">
+   <property name="text">
+    <string>Quad3DMesh</string>
+   </property>
+  </action>
+  <action name="actionPlaneNegativeX">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/-x_coordenate.png</normaloff>:/img/-x_coordenate.png</iconset>
+   </property>
+   <property name="text">
+    <string>PlaneNegativeX</string>
+   </property>
+   <property name="toolTip">
+    <string>Change view to plane -X</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::TextHeuristicRole</enum>
+   </property>
+  </action>
+  <action name="actionPlanePositiveZ">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/-z_coordenate.png</normaloff>:/img/-z_coordenate.png</iconset>
+   </property>
+   <property name="text">
+    <string>PlanePositiveZ</string>
+   </property>
+   <property name="toolTip">
+    <string>Change view to plane +Z</string>
+   </property>
+  </action>
+  <action name="actionView3D">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/3d.png</normaloff>:/img/3d.png</iconset>
+   </property>
+   <property name="text">
+    <string>view3D</string>
+   </property>
+   <property name="toolTip">
+    <string>Change view to 3D</string>
+   </property>
+  </action>
+  <action name="actionPlanePositiveX">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/+x_coordenate.png</normaloff>:/img/+x_coordenate.png</iconset>
+   </property>
+   <property name="text">
+    <string>PlanePositiveX</string>
+   </property>
+   <property name="toolTip">
+    <string>Change view to plane +X</string>
+   </property>
+  </action>
+  <action name="actionPlanePositiveY">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/+y_coordenate.png</normaloff>:/img/+y_coordenate.png</iconset>
+   </property>
+   <property name="text">
+    <string>PlanePositiveY</string>
+   </property>
+   <property name="toolTip">
+    <string>Change view to plane +Y</string>
+   </property>
+  </action>
+  <action name="actionPlaneNegativeY">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/-y_coordenate.png</normaloff>:/img/-y_coordenate.png</iconset>
+   </property>
+   <property name="text">
+    <string>PlaneNegativeY</string>
+   </property>
+   <property name="toolTip">
+    <string>Change view to plane -Y</string>
+   </property>
+  </action>
+  <action name="actionPlaneNegativeZ">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources/resources.qrc">
+     <normaloff>:/img/+z_coordenate.png</normaloff>:/img/+z_coordenate.png</iconset>
+   </property>
+   <property name="text">
+    <string>PlaneNegativeZ</string>
+   </property>
+   <property name="toolTip">
+    <string>Change view to plane -Z</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

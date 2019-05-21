@@ -1,0 +1,50 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>selection.png</file>
+        <file>cursor.png</file>
+        <file>ZoomIn.png</file>
+        <file>ZoomOut.png</file>
+        <file>fit.png</file>
+        <file>3d.png</file>
+        <file>axis-x.png</file>
+        <file>axis-y.png</file>
+        <file>axis-z.png</file>
+        <file>+x_coordenate.png</file>
+        <file>+y_coordenate.png</file>
+        <file>+z_coordenate.png</file>
+        <file>-x_coordenate.png</file>
+        <file>-y_coordenate.png</file>
+        <file>-z_coordenate.png</file>
+        <file>trash.png</file>
+        <file>EditIcon.png</file>
+        <file>AddIcon2.png</file>
+        <file>AddIcon.png</file>
+        <file>icons8-lock-50.png</file>
+    </qresource>
+    <qresource prefix="/shaders" lang="glsl">
+        <file alias="bordered-circle-frag">../../../Shading/Shaders/antialiased_bordered_circle.frag</file>
+        <file alias="bordered-line-frag">../../../Shading/Shaders/antialiased_bordered_line.frag</file>
+        <file alias="bordered-square-frag">../../../Shading/Shaders/antialiased_bordered_square.frag</file>
+        <file alias="bordered-triangle-frag">../../../Shading/Shaders/antialiased_bordered_triangle.frag</file>
+        <file alias="mvp-transformation-vert">../../../Shading/Shaders/mvp_transformation.vert</file>
+        <file alias="no-transformation-vert">../../../Shading/Shaders/no_transformation.vert</file>
+        <file alias="phong-vert">../../../Shading/Shaders/phong.vert</file>
+        <file alias="quad-generator-geom">../../../Shading/Shaders/quad_generator.geom</file>
+        <file alias="transformable-quad-generator-geom">../../../Shading/Shaders/transformable-quad-generator.geom</file>
+        <file alias="rectangle-generator-geom">../../../Shading/Shaders/rectangle_generator.geom</file>
+        <file alias="solid-color-frag">../../../Shading/Shaders/solid_color.frag</file>
+        <file alias="tri6-400-tesc">../../../Shading/Shaders/tri6_400.tesc</file>
+        <file alias="tri6-400-tese">../../../Shading/Shaders/tri6_400.tese</file>
+        <file alias="tri6-400-vert">../../../Shading/Shaders/tri6_400.vert</file>
+        <file alias="triangle-generator-geom">../../../Shading/Shaders/triangle_generator.geom</file>
+        <file alias="wired-phong-uv-frag">../../../Shading/Shaders/wired_phong_uv.frag</file>
+        <file alias="wired-phong-uv-geom">../../../Shading/Shaders/wired_phong_uv.geom</file>
+        <file alias="wired-phong-uvw-frag">../../../Shading/Shaders/wired_phong_uvw.frag</file>
+        <file alias="wired-phong-uvw-geom">../../../Shading/Shaders/wired_phong_uvw.geom</file>
+        <file alias="wired-solid-color-uv-frag">../../../Shading/Shaders/wired_solid_color_uv.frag</file>
+        <file alias="wired-solid-color-uv-geom">../../../Shading/Shaders/wired_solid_color_uv.geom</file>
+        <file alias="wired-solid-color-uvw-frag">../../../Shading/Shaders/wired_solid_color_uvw.frag</file>
+        <file alias="wired-solid-color-uvw-geom">../../../Shading/Shaders/wired_solid_color_uvw.geom</file>
+        <file alias="wired-solid-color-400-frag">../../../Shading/Shaders/wired_solid_color_400.frag</file>        
+    </qresource>
+</RCC>
